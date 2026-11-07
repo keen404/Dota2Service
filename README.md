@@ -109,4 +109,4 @@ var SEG = [      // [จาก MMR, ถึง MMR, บาทต่อ MMR]
 
 ## 📄 License
 
-[MIT](./LICENSE) © <ชื่อของคุณ>
+[MIT](./LICENSE) © Jinna Panthumongkol
