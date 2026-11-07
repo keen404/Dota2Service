@@ -2,9 +2,7 @@
 
 เว็บไซต์หน้าร้านสำหรับบริการ Dota 2 แสดงรายละเอียดบริการ เรทราคา และมีเครื่องคิดเลขประเมินค่าบริการปั๊มแรงค์แบบโปร่งใส
 
-**🔗 Demo:** [Dota2 Service](https://keen404.github.io/Dota2Service/)
-
-<!-- เพิ่มภาพหน้าจอได้ที่นี่ เช่น ![Screenshot](./screenshot.png) -->
+**🔗 Live Demo:** [keen404.github.io/Dota2Service](https://keen404.github.io/Dota2Service/)
 
 ## ✨ ฟีเจอร์
 
@@ -58,8 +56,8 @@ MMR สุทธิต่อเกม  = 25 × (2 × WinRate − 1)
 ### รันในเครื่อง
 
 ```bash
-git clone https://github.com/<username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/keen404/Dota2Service.git
+cd Dota2Service
 ```
 
 จากนั้นเปิดไฟล์ `index.html` ด้วยเบราว์เซอร์ได้เลย
@@ -69,7 +67,7 @@ cd <repo-name>
 1. ตั้งชื่อไฟล์หลักเป็น `index.html`
 2. ไปที่ **Settings → Pages**
 3. ที่ **Source** เลือก **Deploy from a branch** แล้วเลือก branch `main` โฟลเดอร์ `/ (root)`
-4. กด **Save** รอสักครู่ เว็บจะอยู่ที่ `https://<username>.github.io/<repo-name>/`
+4. กด **Save** รอสักครู่ เว็บจะอยู่ที่ https://keen404.github.io/Dota2Service/
 
 ## ⚙️ การปรับแต่ง
 
@@ -93,6 +91,7 @@ var SEG = [      // [จาก MMR, ถึง MMR, บาทต่อ MMR]
 ```
 .
 ├── index.html   # หน้าเว็บทั้งหมด (HTML + CSS + JS)
+├── LICENSE
 └── README.md
 ```
 
@@ -109,4 +108,4 @@ var SEG = [      // [จาก MMR, ถึง MMR, บาทต่อ MMR]
 
 ## 📄 License
 
-[MIT](./LICENSE) © Jinna Panthumongkol
+[MIT](./LICENSE) © 2026 keen404
