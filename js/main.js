@@ -15,3 +15,4 @@ document.getElementById("chips").addEventListener("click", (event) => {
 });
 
 updateCalculator();
+initializeAnalytics();
