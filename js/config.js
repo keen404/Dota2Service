@@ -1,5 +1,6 @@
 export const BASE_PRICE = 40;
 export const MMR_PER_GAME = 25;
+export const GOATCOUNTER_SITE_URL = "https://2003keen.goatcounter.com";
 
 export const MMR_SEGMENTS = [
   [0, 3000, 0.5],

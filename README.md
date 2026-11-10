@@ -12,6 +12,7 @@
 - **แสดงตำแหน่งที่เล่นได้** พร้อมระดับฝีมือ
 - **รองรับมือถือ** (Responsive) และรองรับ Light/Dark mode อัตโนมัติ
 - **แยกโค้ดเป็น modules** ดูแลรักษาง่าย ไม่ต้องติดตั้ง ไม่มี dependency
+- **ติดตามผู้เข้าชม** ด้วย GoatCounter โดยยอดดูได้เฉพาะเจ้าของผ่าน dashboard
 
 ## 💼 บริการและราคา
 
@@ -62,6 +63,11 @@ cd Dota2Service
 
 จากนั้นเปิดไฟล์ `index.html` ด้วยเบราว์เซอร์ได้เลย
 
+### ดูจำนวนผู้เข้าชม
+
+สถิติผู้เข้าชมรายเดือนดูได้จาก [GoatCounter dashboard](https://2003keen.goatcounter.com/)
+โดยยอดจะไม่ถูกแสดงบนหน้าเว็บแก่ผู้เข้าชมทั่วไป
+
 ### Deploy ด้วย GitHub Pages
 
 1. ตั้งชื่อไฟล์หลักเป็น `index.html`
@@ -97,6 +103,7 @@ export const MMR_SEGMENTS = [    // [จาก MMR, ถึง MMR, บาทต�
 │   ├── config.js      # ค่าคงที่และเรทราคา
 │   ├── calculator.js  # logic การคำนวณ
 │   ├── dom.js         # แสดงผลและจัดการ DOM
+│   ├── analytics.js   # เริ่มต้นระบบติดตามผู้เข้าชม
 │   └── main.js        # จุดเริ่มต้นและ event handlers
 ├── LICENSE
 └── README.md
