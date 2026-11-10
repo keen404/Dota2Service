@@ -11,7 +11,7 @@
 - **ตารางเปรียบเทียบ Win Rate** แสดงให้เห็นว่ายิ่งชนะบ่อย ราคาเฉลี่ยต่อ MMR ยิ่งถูกลง
 - **แสดงตำแหน่งที่เล่นได้** พร้อมระดับฝีมือ
 - **รองรับมือถือ** (Responsive) และรองรับ Light/Dark mode อัตโนมัติ
-- **ไฟล์เดียวจบ** ไม่ต้องติดตั้ง ไม่มี dependency
+- **แยกโค้ดเป็น modules** ดูแลรักษาง่าย ไม่ต้องติดตั้ง ไม่มี dependency
 
 ## 💼 บริการและราคา
 
@@ -71,12 +71,12 @@ cd Dota2Service
 
 ## ⚙️ การปรับแต่ง
 
-แก้ราคาได้ที่ตัวแปรต้นส่วน `<script>` ในไฟล์ `index.html`
+แก้ราคาได้ที่ไฟล์ [`js/config.js`](./js/config.js)
 
 ```js
-var BASE = 40;   // ค่าแรงพื้นฐานต่อเกม (บาท)
-var GAIN = 25;   // MMR ที่ได้/เสียต่อเกม
-var SEG = [      // [จาก MMR, ถึง MMR, บาทต่อ MMR]
+export const BASE_PRICE = 40;   // ค่าแรงพื้นฐานต่อเกม (บาท)
+export const MMR_PER_GAME = 25; // MMR ที่ได้/เสียต่อเกม
+export const MMR_SEGMENTS = [    // [จาก MMR, ถึง MMR, บาทต่อ MMR]
   [0, 3000, .5],
   [3000, 4000, 1],
   [4000, 5000, 2],
@@ -90,7 +90,14 @@ var SEG = [      // [จาก MMR, ถึง MMR, บาทต่อ MMR]
 
 ```
 .
-├── index.html   # หน้าเว็บทั้งหมด (HTML + CSS + JS)
+├── index.html   # โครงสร้างหน้าเว็บ
+├── css/
+│   └── style.css     # สไตล์ทั้งหมดของหน้าเว็บ
+├── js/
+│   ├── config.js      # ค่าคงที่และเรทราคา
+│   ├── calculator.js  # logic การคำนวณ
+│   ├── dom.js         # แสดงผลและจัดการ DOM
+│   └── main.js        # จุดเริ่มต้นและ event handlers
 ├── LICENSE
 └── README.md
 ```
