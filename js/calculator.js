@@ -8,9 +8,9 @@ export function calculateBonus(startMmr, mmrDifference) {
   const targetMmr = startMmr + mmrDifference;
 
   return PRICING_TIERS.reduce((total, { min, max, bonusFee }) => {
-    const tierStart = Math.max(startMmr, min);
+    const tierStart = Math.max(startMmr + 1, min);
     const tierEnd = Math.min(targetMmr, max);
-    const mmrInTier = Math.max(0, tierEnd - tierStart);
+    const mmrInTier = Math.max(0, tierEnd - tierStart + 1);
     return total + mmrInTier * bonusFee;
   }, 0);
 }
