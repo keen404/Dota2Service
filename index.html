@@ -17,7 +17,12 @@
             <span class="tag">Dota 2 Services</span>
             <h1>เล่นด้วยกัน ปั๊มแรงค์ <span>โค้ชให้เก่งขึ้น</span></h1>
             <p>บริการ Dota 2 ราคาโปร่งใส คำนวณค่าบริการเองได้ทันที เลือกบริการที่ใช่แล้วทักมาได้เลย</p>
-            <a class="btn" href="#calc">คำนวณราคาปั๊มแรงค์</a><a class="btn o" href="#contact">ติดต่อ</a>
+            <div class="highlight">👉 บริการดัน Rank เรตราคาสุดคุ้ม เริ่มต้นเฉลี่ยเพียง ~1.75 บาท / 1 MMR (ถูกกว่าท้องตลาด)</div>
+            <div class="header-actions">
+                <a class="btn" href="#calc">คำนวณราคาปั๊มแรงค์</a>
+                <a class="btn o" href="https://www.facebook.com/jinna.punthumongkol/" target="_blank"
+                    rel="noopener">ติดต่อ</a>
+            </div>
         </header>
 
         <section id="services">
@@ -34,9 +39,9 @@
                 </div>
                 <div class="c">
                     <h3>2. รับปั๊มแรงค์</h3>
-                    <div class="price">40 ฿<small> / เกม + ค่า MMR</small></div>
+                    <div class="price">15 ฿<small> / เกม + ค่า MMR</small></div>
                     <ul>
-                        <li>ค่าแรงพื้นฐาน 40 บาทต่อเกม</li>
+                        <li>ค่าลงสนามเริ่มต้น 15 บาทต่อเกม</li>
                         <li>บวกค่าบริการตาม MMR ที่เพิ่มขึ้น</li>
                         <li>ยิ่งชนะบ่อย ยิ่งจ่ายถูกลง</li>
                     </ul>
@@ -81,7 +86,7 @@
 
         <section>
             <h2>เรทค่าบริการ MMR</h2>
-            <p class="sub">คิดตาม MMR ที่เพิ่มขึ้นจริง ตามช่วงแรงค์ (ต่อ 100 MMR)</p>
+            <p class="sub">ค่าลงสนามและโบนัส MMR อ้างอิงจาก MMR ปัจจุบันของลูกค้า</p>
             <div class="c sc">
                 <table>
                     <tr>
@@ -92,27 +97,26 @@
                     </tr>
                     <tr>
                         <td>0 – 3,000</td>
-                        <td>Herald – Archon</td>
-                        <td>0.5</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>3,000 – 4,000</td>
-                        <td>Legend</td>
+                        <td>Herald – Crusader</td>
                         <td>1.0</td>
                         <td>100</td>
                     </tr>
                     <tr>
-                        <td>4,000 – 5,000</td>
-                        <td>Ancient</td>
+                        <td>3,001 – 4,600</td>
+                        <td>Archon – Ancient</td>
                         <td>2.0</td>
                         <td>200</td>
                     </tr>
                     <tr>
-                        <td>5,000+</td>
-                        <td>Divine ขึ้นไป</td>
-                        <td>3.5</td>
-                        <td>350</td>
+                        <td>4,601 – 5,600</td>
+                        <td>Divine</td>
+                        <td>3.0</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>5,601+</td>
+                        <td>Immortal</td>
+                        <td colspan="2">ปิดรับบริการ</td>
                     </tr>
                 </table>
             </div>
@@ -122,10 +126,11 @@
             <h2>MMR Calculator</h2>
             <p class="sub">ใส่ MMR ปัจจุบัน เป้าหมาย และ Win Rate ที่คาดไว้ ระบบจะคำนวณให้ทันที</p>
             <div class="c">
+                <p class="pricing-model">โครงสร้างราคาคิดตามผลงานจริง: ค่าลงสนามเริ่มต้น 15 บาท/เกม + โบนัสแต้ม MMR ที่ชนะได้จริง (แฟร์ โปร่งใส คุ้มค่า)</p>
                 <div class="row">
-                    <div><label for="cur">MMR ปัจจุบัน</label><input id="cur" type="number" min="0" max="15000"
+                    <div><label for="cur">MMR ปัจจุบัน</label><input id="cur" type="number" min="0" max="5600"
                             step="10" value="2500"></div>
-                    <div><label for="tgt">MMR เป้าหมาย</label><input id="tgt" type="number" min="0" max="15000"
+                    <div><label for="tgt">MMR เป้าหมาย</label><input id="tgt" type="number" min="0" max="5600"
                             step="10" value="4000"></div>
                     <div><label for="wr">Win Rate ที่สมมติ (%)</label><input id="wr" type="number" min="51" max="100"
                             step="1" value="80"></div>
@@ -139,9 +144,10 @@
                 <div class="sc">
                     <table id="cmp"></table>
                 </div>
-                <p class="note calculator-note">* ประมาณการโดยสมมติว่าชนะ +25 MMR แพ้ −25 MMR ต่อเกม
-                    ค่าประกันเวลา = จำนวนเกม × 40 บาท ราคาจริงอาจแตกต่างเล็กน้อยตามผลการเล่น
+                <p class="note safety-note">สัปดาห์ไหน Win Rate ต่ำกว่า 60% งดคิดค่าลงสนามแมตช์ที่แพ้ เพื่อความโปร่งใสและสบายใจของลูกค้า</p>
+                <p class="note calculator-note">* ประมาณการโดยสมมติว่าชนะ +25 MMR แพ้ −25 MMR ต่อเกม ราคาจริงอาจแตกต่างเล็กน้อยตามผลการเล่น
                     และตกลงราคากับผู้ให้บริการอีกครั้งก่อนเริ่มงาน</p>
+                <p class="free-benefit">ฟรี! สตรีมสดทุกแมตช์ + สรุปรายงาน Google Sheets รายสัปดาห์</p>
             </div>
         </section>
 

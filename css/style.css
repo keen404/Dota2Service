@@ -87,6 +87,24 @@ header p {
     margin: 0 auto 22px
 }
 
+.highlight {
+    display: block;
+    margin: 0 auto 18px;
+    padding: 8px 14px;
+    border: 1px solid var(--ac2);
+    border-radius: 10px;
+    color: var(--ac2);
+    font-weight: 600;
+    width: fit-content
+}
+
+.header-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px
+}
+
 .btn {
     display: inline-block;
     background: var(--ac);
@@ -94,8 +112,7 @@ header p {
     text-decoration: none;
     font-weight: 600;
     padding: 10px 20px;
-    border-radius: 10px;
-    margin: 4px
+    border-radius: 10px
 }
 
 .btn.o {
@@ -158,6 +175,12 @@ h2 {
 .comparison-heading {
     margin: 8px 0;
     font-size: 16px
+}
+
+.pricing-model {
+    margin: 0 0 14px;
+    color: var(--mut);
+    font-size: 14px
 }
 
 .c ul {
@@ -307,6 +330,10 @@ input[type=number] {
     color: var(--ac2)
 }
 
+.res .tot {
+    border-color: var(--ac2)
+}
+
 .err {
     color: var(--ac);
     min-height: 22px;
@@ -316,6 +343,17 @@ input[type=number] {
 .note {
     font-size: 13px;
     color: var(--mut)
+}
+
+.safety-note {
+    color: var(--ok);
+    font-weight: 600
+}
+
+.free-benefit {
+    margin: 12px 0 0;
+    color: var(--ac2);
+    font-weight: 600
 }
 
 .calculator-note {

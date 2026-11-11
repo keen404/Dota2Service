@@ -1,21 +1,30 @@
-import { BASE_PRICE, MMR_PER_GAME, MMR_SEGMENTS } from "./config.js";
+import { MMR_PER_GAME, PRICING_TIERS } from "./config.js";
 
-export function calculateBonus(startMmr, targetMmr) {
-  return MMR_SEGMENTS.reduce((total, [segmentStart, segmentEnd, price]) => {
-    const mmrInSegment = Math.max(
-      0,
-      Math.min(segmentEnd, targetMmr) - Math.max(segmentStart, startMmr),
-    );
-    return total + mmrInSegment * price;
+export function getPricingTier(mmr) {
+  return PRICING_TIERS.find(({ min, max }) => mmr >= min && mmr <= max);
+}
+
+export function calculateBonus(startMmr, mmrDifference) {
+  const targetMmr = startMmr + mmrDifference;
+
+  return PRICING_TIERS.reduce((total, { min, max, bonusFee }) => {
+    const tierStart = Math.max(startMmr, min);
+    const tierEnd = Math.min(targetMmr, max);
+    const mmrInTier = Math.max(0, tierEnd - tierStart);
+    return total + mmrInTier * bonusFee;
   }, 0);
 }
 
 export function calculatePrice(startMmr, targetMmr, winRate) {
   const mmrDifference = targetMmr - startMmr;
   const netMmrPerGame = MMR_PER_GAME * (2 * winRate / 100 - 1);
-  const games = Math.ceil(mmrDifference / netMmrPerGame);
-  const timePrice = games * BASE_PRICE;
-  const mmrPrice = calculateBonus(startMmr, targetMmr);
+  const games = Math.ceil(mmrDifference / netMmrPerGame - 1e-9);
+  const tier = getPricingTier(startMmr);
+  if (!tier) {
+    throw new RangeError(`Unsupported starting MMR: ${startMmr}`);
+  }
+  const timePrice = games * tier.baseFee;
+  const mmrPrice = calculateBonus(startMmr, mmrDifference);
   const total = timePrice + mmrPrice;
 
   return {
@@ -25,5 +34,6 @@ export function calculatePrice(startMmr, targetMmr, winRate) {
     mmrPrice,
     total,
     averagePrice: total / mmrDifference,
+    tier,
   };
 }
