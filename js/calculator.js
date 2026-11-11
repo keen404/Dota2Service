@@ -19,7 +19,7 @@ export function calculatePrice(startMmr, targetMmr, winRate) {
   const mmrDifference = targetMmr - startMmr;
   const netMmrPerGame = MMR_PER_GAME * (2 * winRate / 100 - 1);
   const games = Math.ceil(mmrDifference / netMmrPerGame - 1e-9);
-  const tier = getPricingTier(startMmr);
+  const tier = getPricingTier(targetMmr);
   if (!tier) {
     throw new RangeError(`Unsupported starting MMR: ${startMmr}`);
   }
