@@ -39,11 +39,11 @@
                 </div>
                 <div class="c">
                     <h3>2. รับปั๊มแรงค์</h3>
-                    <div class="price">15 ฿<small> / เกม + ค่า MMR</small></div>
+                    <div class="price">เริ่มต้น 1.75 ฿<small> / 1 MMR</small></div>
                     <ul>
-                        <li>ค่าลงสนามเริ่มต้น 15 บาทต่อเกม</li>
-                        <li>บวกค่าบริการตาม MMR ที่เพิ่มขึ้น</li>
-                        <li>ยิ่งชนะบ่อย ยิ่งจ่ายถูกลง</li>
+                        <li>คิดราคาตามแต้ม MMR ที่เพิ่มขึ้นจริง</li>
+                        <li>ไม่มีค่าลงสนามหรือค่าใช้จ่ายแอบแฝง</li>
+                        <li>รู้ราคาสุทธิทันทีตั้งแต่ก่อนเริ่มงาน</li>
                     </ul>
                 </div>
                 <div class="c">
@@ -86,36 +86,36 @@
 
         <section>
             <h2>เรทค่าบริการ MMR</h2>
-            <p class="sub">ค่าลงสนามและโบนัส MMR อ้างอิงจาก MMR ปัจจุบันของลูกค้า</p>
+            <p class="sub">คิดตามจำนวนแต้ม MMR ที่ไต่ผ่านในแต่ละช่วงแบบขั้นบันได</p>
             <div class="c sc">
                 <table>
                     <tr>
                         <th>ช่วง MMR</th>
-                        <th>แรงค์</th>
                         <th>บาท / MMR</th>
                         <th>บาท / 100 MMR</th>
                     </tr>
                     <tr>
                         <td>0 – 3,000</td>
-                        <td>Herald – Crusader</td>
-                        <td>1.0</td>
-                        <td>100</td>
+                        <td>1.75</td>
+                        <td>175</td>
                     </tr>
                     <tr>
-                        <td>3,001 – 4,600</td>
-                        <td>Archon – Ancient</td>
-                        <td>2.0</td>
-                        <td>200</td>
+                        <td>3,001 – 4,200</td>
+                        <td>2.50</td>
+                        <td>250</td>
                     </tr>
                     <tr>
-                        <td>4,601 – 5,600</td>
-                        <td>Divine</td>
-                        <td>3.0</td>
-                        <td>300</td>
+                        <td>4,201 – 4,800</td>
+                        <td>3.25</td>
+                        <td>325</td>
                     </tr>
                     <tr>
-                        <td>5,601+</td>
-                        <td>Immortal</td>
+                        <td>4,801 – 5,600</td>
+                        <td>4.00</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>มากกว่า 5,600</td>
                         <td colspan="2">ปิดรับบริการ</td>
                     </tr>
                 </table>
@@ -124,30 +124,18 @@
 
         <section id="calc">
             <h2>MMR Calculator</h2>
-            <p class="sub">ใส่ MMR ปัจจุบัน เป้าหมาย และ Win Rate ที่คาดไว้ ระบบจะคำนวณให้ทันที</p>
+            <p class="sub">ใส่ MMR ปัจจุบันและเป้าหมาย ระบบจะคำนวณราคาสุทธิให้ทันที</p>
             <div class="c">
-                <p class="pricing-model">โครงสร้างราคาคิดตามผลงานจริง: ค่าลงสนามเริ่มต้น 15 บาท/เกม + โบนัสแต้ม MMR ที่ชนะได้จริง (แฟร์ โปร่งใส คุ้มค่า)</p>
+                <p class="pricing-model">จ่ายตามแต้ม MMR จริง 100% รู้ราคาสุทธิทันที ไม่มีบวกเพิ่มภายหลัง (ฟรี! สตรีมสดทุกแมตช์)</p>
                 <div class="row">
                     <div><label for="cur">MMR ปัจจุบัน</label><input id="cur" type="number" min="0" max="5600"
-                            step="10" value="2500"></div>
+                            step="1" value="2500"></div>
                     <div><label for="tgt">MMR เป้าหมาย</label><input id="tgt" type="number" min="0" max="5600"
-                            step="10" value="4000"></div>
-                    <div><label for="wr">Win Rate ที่สมมติ (%)</label><input id="wr" type="number" min="51" max="100"
-                            step="1" value="80"></div>
+                            step="1" value="4000"></div>
                 </div>
-                <div class="chips" id="chips"><button data-w="100">100%</button><button data-w="90">90%</button><button
-                        data-w="80" class="on">80%</button><button data-w="75">75%</button><button
-                        data-w="70">70%</button><button data-w="60">60%</button></div>
                 <div class="err" id="err"></div>
                 <div class="res" id="res"></div>
-                <h3 class="comparison-heading">เปรียบเทียบตาม Win Rate</h3>
-                <div class="sc">
-                    <table id="cmp"></table>
-                </div>
-                <p class="note safety-note">สัปดาห์ไหน Win Rate ต่ำกว่า 60% งดคิดค่าลงสนามแมตช์ที่แพ้ เพื่อความโปร่งใสและสบายใจของลูกค้า</p>
-                <p class="note calculator-note">* ประมาณการโดยสมมติว่าชนะ +25 MMR แพ้ −25 MMR ต่อเกม ราคาจริงอาจแตกต่างเล็กน้อยตามผลการเล่น
-                    และตกลงราคากับผู้ให้บริการอีกครั้งก่อนเริ่มงาน</p>
-                <p class="free-benefit">ฟรี! สตรีมสดทุกแมตช์ + สรุปรายงาน Google Sheets รายสัปดาห์</p>
+                <p class="note calculator-note">คำนวณจากแต้ม MMR ที่เพิ่มขึ้นจริง โดยไม่มีค่าลงสนามต่อเกม</p>
             </div>
         </section>
 

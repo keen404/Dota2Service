@@ -81,11 +81,11 @@ cd Dota2Service
 
 ```js
 export const MAX_MMR = 5600;
-export const MMR_PER_GAME = 25;
 export const PRICING_TIERS = [
-  { min: 0, max: 3000, baseFee: 15, bonusFee: 1.5 },
-  { min: 3001, max: 4600, baseFee: 15, bonusFee: 2 },
-  { min: 4601, max: 5600, baseFee: 20, bonusFee: 3 },
+  { min: 0, max: 3000, pricePerMmr: 1.75 },
+  { min: 3001, max: 4200, pricePerMmr: 2.5 },
+  { min: 4201, max: 4800, pricePerMmr: 3.25 },
+  { min: 4801, max: 5600, pricePerMmr: 4 },
 ];
 ```
 

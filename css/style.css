@@ -172,11 +172,6 @@ h2 {
     font-size: 18px
 }
 
-.comparison-heading {
-    margin: 8px 0;
-    font-size: 16px
-}
-
 .pricing-model {
     margin: 0 0 14px;
     color: var(--mut);
@@ -251,15 +246,6 @@ th {
     overflow-x: auto
 }
 
-tr.hl td {
-    background: color-mix(in srgb, var(--ac) 14%, transparent);
-    font-weight: 600
-}
-
-tr.best td:last-child {
-    color: var(--ok)
-}
-
 label {
     display: block;
     font-size: 14px;
@@ -284,27 +270,9 @@ input[type=number] {
     margin-bottom: 12px
 }
 
-.chips button {
-    background: var(--bg);
-    color: var(--tx);
-    border: 1px solid var(--line);
-    border-radius: 99px;
-    padding: 5px 14px;
-    margin: 0 6px 6px 0;
-    cursor: pointer;
-    font: inherit;
-    font-size: 14px
-}
-
-.chips button.on {
-    background: var(--ac);
-    border-color: var(--ac);
-    color: #fff
-}
-
 .res {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin: 16px 0
 }
@@ -332,6 +300,16 @@ input[type=number] {
 
 .res .tot {
     border-color: var(--ac2)
+}
+
+@media (max-width: 600px) {
+    .res {
+        grid-template-columns: 1fr
+    }
+
+    .res b {
+        font-size: 24px
+    }
 }
 
 .err {
